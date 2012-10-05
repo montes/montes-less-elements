@@ -1,12 +1,12 @@
 /*
- *  Montes Less Elements For General Webdesign 
+ *  Montes Less Elements For General Webdesign
  *  @mooontes http://mooontes.com
- * 
+ *
  *  Forked 2012/06 from LESS Elements 0.6
  * ---------------------------------------------------
  *    A set of useful LESS mixins by Dmitry Fadeyev
  *   More info at: http://lesselements.com
- *   
+ *
  */
 
 .mon-gradient(@from, @to) {
@@ -17,7 +17,8 @@
     background: -o-linear-gradient(top,  @from 31%,@to 100%); /* Opera 11.10+ */
     background: -ms-linear-gradient(top,  @from 31%,@to 100%); /* IE10+ */
     background: linear-gradient(top,  @from 31%,@to 100%); /* W3C */
-    filter:     progid:DXImageTransform.Microsoft.gradient( startColorstr=@from, endColorstr=@to, GradientType=0 ); /* IE6-9 */
+    -ms-filter: ~"progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr=@{from}, endColorstr=@{to})"; /* IE6-9 */
+    zoom: 1;
 }
 
 .gradient(@color: #F5F5F5, @start: #EEE, @stop: #FFF) {
@@ -68,9 +69,9 @@
     -moz-border-radius:     @radius;
     -ms-border-radius:      @radius;
     border-radius:          @radius;
-    -moz-background-clip:   padding; 
-    -webkit-background-clip:padding-box; 
-    background-clip:        padding-box; 
+    -moz-background-clip:   padding;
+    -webkit-background-clip:padding-box;
+    background-clip:        padding-box;
 }
 
 .border-radius(@topright: 0, @bottomright: 0, @bottomleft: 0, @topleft: 0) {
@@ -86,14 +87,14 @@
     border-bottom-right-radius:         @bottomright;
     border-bottom-left-radius:          @bottomleft;
     border-top-left-radius:             @topleft;
-    -moz-background-clip:               padding; 
-    -webkit-background-clip:            padding-box; 
-    background-clip:                    padding-box; 
+    -moz-background-clip:               padding;
+    -webkit-background-clip:            padding-box;
+    background-clip:                    padding-box;
 }
 
 .opacity(@opacity: 0.5) {
     @opacityPercentage: @opacity * 100;
-    -ms-filter:         ~"progid:DXImageTransform.Microsoft.Alpha(opacity=(@{opacityPercentage}))"; 
+    -ms-filter:         ~"progid:DXImageTransform.Microsoft.Alpha(opacity=(@{opacityPercentage}))";
     filter:             ~"alpha(opacity = (@{opacityPercentage}))";
     -moz-opacity:       @opacity;
     -khtml-opacity:     @opacity;
@@ -111,7 +112,7 @@
     -webkit-transform:  rotate(@deg);
     -moz-transform:     rotate(@deg);
     -o-transform:       rotate(@deg);                   /*Opera*/
-    -ms-transform:      rotate(@deg) !important;  
+    -ms-transform:      rotate(@deg) !important;
     transform:          rotate(@deg);
 }
 
